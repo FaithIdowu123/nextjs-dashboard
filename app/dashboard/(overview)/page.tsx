@@ -6,13 +6,14 @@ import { fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import { Metadata } from 'next';
+
+export const dynamic = 'force-dynamic';
  
 export const metadata: Metadata = {
   title: 'Dashboard',
 };
  
 export default async function Page() {
-  const cardData = await fetchCardData();
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
